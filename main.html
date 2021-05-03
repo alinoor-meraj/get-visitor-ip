@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Get visitors IP/address</title>
+    <meta content="I am a web designer, developer, freelancer" name="description">
+    <meta content="web design, development" name="keywords">
+  </head>
+  <body>
+
+    <h2 id="ip">Loading...................</h2>
+    <h2 id="city">Loading...................</h2>
+    <h2 id="state">Loading...................</h2>
+    <h2 id="country">Loading...................</h2>
+    <h2 id="postal">Loading...................</h2>
+    <h2 id="loc">Loading...................</h2>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript">
+      $.get('https://ipinfo.io',function(response){
+        $("#ip").html('IP: <b>'+response.ip+'<b>');
+        $("#city").html('City: <b>'+response.city+'<b>');
+        $("#state").html('State: <b>'+response.region+'<b>');
+        $("#country").html('Country: <b>'+response.country+'<b>');
+        $("#postal").html('Postal: <b>'+response.postal+'<b>');
+        $("#loc").html('Location: <b>'+response.loc+'<b>');
+      },'json');
+    </script>
+
+  </body>
+</html>
